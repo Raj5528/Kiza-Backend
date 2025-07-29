@@ -21,14 +21,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies using Node.js 23.11.0...'
-                bat 'start /B npm start'
+                bat 'npm install'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deployment stage (add your deploy steps here)...'
-                bat 'nohup npm start & disown'
+                bat 'start /B npm start'
             }
         }
     }
