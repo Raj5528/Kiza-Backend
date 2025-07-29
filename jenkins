@@ -28,13 +28,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deployment stage (add your deploy steps here)...'
-                bat '''
-echo Starting server in background...
-start /B cmd /c "npm start > server.log 2>&1"
-timeout /t 5 /nobreak
-type server.log
-'''
-
+                bat 'start '' npm start'
             }
         }
     }
